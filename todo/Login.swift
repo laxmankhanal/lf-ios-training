@@ -4,7 +4,7 @@ public class Login {
   var isValid : Bool! = false
 
   func doAuthentication(withUserName userName: String?, withPassword password: String?) -> Bool { 
-      if(user[0] == userName && user[1] == password) {
+      if(users[0] == userName && users[1] == password) {
         isValid = true;
       }
     return isValid

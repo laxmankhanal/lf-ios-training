@@ -10,6 +10,7 @@ public class SelectOption {
 		print("Press 3 to Edit task")
 		print("Press 4 to Close Task")
 		print("Press 5 to Delete Task")
+		print("Press 6 to View Task By Day")
 		print("Press 0 to Exit")
 
     choice = readLine()
@@ -43,6 +44,10 @@ public class SelectOption {
 
 	    case 5 :
 	      task.deleteTask()
+
+	    case 6 :
+	    	print("Enter day")
+	    	task.taskByDay(readLine())
 
 	    default :
 	      print("Sorry your request is out of service")

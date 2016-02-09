@@ -2,6 +2,16 @@ public class Task {
 
 	var task = [TaskAttributes]()
 	var i = 0
+
+  enum Days : String {
+    case Sunday = "sunday"
+    case Monday = "monday"
+    case Tuesday = "tuesday"
+    case Wednesday = "wednesday"
+    case Thursday = "thursday"
+    case Friday = "friday"
+    case Saturday = "saturday"
+  }
   
 	func addTask() -> Bool {
     var taskAttributes = TaskAttributes()
@@ -30,10 +40,51 @@ public class Task {
 	}
 
   func viewTask() {
-    i = 0
     for item in task {
       print(item.taskTitle)
       print(item.description!)
+    }
+  }
+
+  func taskByDay(inputDay : String!) {
+    var day : Days
+    if(inputDay == "sunday"){
+      day = .Sunday
+    }else if(inputDay == "monday"){
+      day = .Monday
+    }else if(inputDay == "tuesday"){
+      day = .Tuesday
+    }else if(inputDay == "wednesday"){
+      day = .Wednesday
+    }else if(inputDay == "thursday"){
+      day = .Thursday
+    }else if(inputDay == "friday"){
+      day = .Friday
+    }else {
+      day = .Saturday
+    }
+
+    switch day {
+    case .Sunday :
+      print("Today is \(day.rawValue) \n")
+
+    case Days.Monday :
+      print("Today is \(day.rawValue \n)")
+
+    case Days.Tuesday :
+      print("Today is \(day.rawValue \n)")
+
+    case Days.Wednesday :
+      print("Today is \(day.rawValue \n)")
+
+    case Days.Thursday :
+      print("Today is \(day.rawValue \n)")
+
+    case Days.Friday :
+      print("Today is \(day.rawValue \n)")
+
+    case Days.Saturday :
+      print("Today is \(day.rawValue \n)")
     }
   }
 
