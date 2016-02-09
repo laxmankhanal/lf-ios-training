@@ -1,4 +1,5 @@
 public class TaskAttributes {
+
 	var title: String? = ""
 	var description: String? = ""
 	var totalHours: Int? = 0
@@ -20,7 +21,6 @@ public class TaskAttributes {
     get{
       return self.description!
     }
-
   }
 
   var taskTotalHours: Int {
@@ -40,4 +40,5 @@ public class TaskAttributes {
       return self.workingHours!
     }
   }
+
 }

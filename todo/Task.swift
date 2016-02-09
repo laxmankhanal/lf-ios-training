@@ -1,10 +1,9 @@
 public class Task {
+
 	var task = [TaskAttributes]()
 	var i = 0
   
-
 	func addTask() -> Bool {
-
     var taskAttributes = TaskAttributes()
 
 		print("\n Enter title of task")
@@ -23,14 +22,11 @@ public class Task {
 
     taskAttributes.taskTitle = title!
     taskAttributes.taskDescription = description!
-   
     task.append(taskAttributes)
-
     return true
 
    //taskAttributes.taskTotalHours = Int(totalHours)
     //taskAttributes.taskWorkingHours = Int(workingHours)!
-
 	}
 
   func viewTask() {
@@ -38,9 +34,7 @@ public class Task {
     for item in task {
       print(item.taskTitle)
       print(item.description!)
-
     }
-
   }
 
   func editTask() {

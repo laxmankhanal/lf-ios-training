@@ -1,4 +1,5 @@
 public class SelectOption {
+
 	var choice: String? = ""
 	var select: Int!
 	var quit: Bool = false
@@ -49,6 +50,5 @@ public class SelectOption {
 			}
 			return quit
 		}
-
 		
 }
