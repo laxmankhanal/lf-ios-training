@@ -12,7 +12,7 @@
   var selectOption = SelectOption()
   var task = Task()
 
-  // var fileHandler = FileHandler()
+  var fileHandler = FileHandler()
   // print(fileHandler.readFromFile("/home/leapfrog/Desktop/ch"))
 
   var taskDAO = TaskDAO()
