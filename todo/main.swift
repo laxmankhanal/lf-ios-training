@@ -1,6 +1,6 @@
   import Foundation
   import Glibc
-  import sqlite3
+
   var i : Int? = 0
   var quit :Bool = false
   var isValid : Bool! = false

@@ -19,15 +19,15 @@ public class FileHandler {
 
 	func writeToFile(targetPath path: String, inputString enteredString: String) {
 		let fp = fopen(path, fileMode.Append.rawValue)
-	  let byteArray = bytesFromString("\n" + enteredString)
+	  let byteArray = bytesFromString("\n \(enteredString)")
 	  fwrite(byteArray, 1, byteArray.count, fp)
 	  fclose(fp)
 	}
 
-	func readFromFile(path: String) -> String{
+	func readFromFile(path: String) -> String {
 		var outputString: String = ""
 		let fp = fopen(path, fileMode.Read.rawValue)
-		guard fp != nil else { return "sorry file donot exists" }
+		guard fp != nil else { return "sorry file doesn't exists" }
 		let chunkSize = 1024
 		let buffer: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer.alloc(chunkSize)
   	let count: Int = fread(buffer, 1, chunkSize, fp)
