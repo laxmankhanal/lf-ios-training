@@ -1,11 +1,19 @@
+  import Foundation
+  import Glibc
+  import sqlite3
   var i : Int? = 0
   var quit :Bool = false
-	var login = Login()
-  var selectOption = SelectOption()
-	var task = Task()
   var isValid : Bool! = false
   var userName : String! = ""
   var password : String! = ""
+  var userInfo = ["laxman", "laxman"]
+
+  var login = Login(users: userInfo, validity: false)
+  var selectOption = SelectOption()
+  var task = Task()
+
+  // var fileHandler = FileHandler()
+  // print(fileHandler.readFromFile("/home/leapfrog/Desktop/ch"))
 
   while(isValid == false) {
     if(i > 0){
@@ -25,8 +33,5 @@
   while(!quit){
     quit = selectOption.getOptions()
 
-  }
-
-
-    
+  }  
   

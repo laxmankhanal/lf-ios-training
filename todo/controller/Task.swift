@@ -1,7 +1,11 @@
 public class Task {
 
 	var task = [TaskAttributes]()
-	var i = 0
+	var i : Int
+
+  init() {
+    self.i = 0
+  }
 
   enum Days : String {
     case Sunday = "sunday"
@@ -46,45 +50,35 @@ public class Task {
     }
   }
 
-  func taskByDay(inputDay : String!) {
-    var day : Days
-    if(inputDay == "sunday"){
-      day = .Sunday
-    }else if(inputDay == "monday"){
-      day = .Monday
-    }else if(inputDay == "tuesday"){
-      day = .Tuesday
-    }else if(inputDay == "wednesday"){
-      day = .Wednesday
-    }else if(inputDay == "thursday"){
-      day = .Thursday
-    }else if(inputDay == "friday"){
-      day = .Friday
-    }else {
-      day = .Saturday
-    }
+  func inputDay(dayString: String!) {
+    let dayEnum = Days(rawValue: dayString) 
+    // as? Days else { return }
+    print(dayEnum)
+    taskByDay(dayEnum!)
+}
 
-    switch day {
+  func taskByDay(inputDay: Days) {
+    switch inputDay {
     case .Sunday :
-      print("Today is \(day.rawValue) \n")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Monday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Tuesday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Wednesday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Thursday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Friday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
 
     case Days.Saturday :
-      print("Today is \(day.rawValue \n)")
+      print("Today is \(inputDay.rawValue) \n")
     }
   }
 
@@ -99,6 +93,5 @@ public class Task {
   func deleteTask() {
 
   }
-
 
 }

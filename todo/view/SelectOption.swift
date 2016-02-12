@@ -2,7 +2,11 @@ public class SelectOption {
 
 	var choice: String? = ""
 	var select: Int!
-	var quit: Bool = false
+	var quit: Bool 
+
+  init() {
+    self.quit = false
+  }
 
 	func getOptions() -> Bool {
 		print("Press 1 to view Task")
@@ -20,10 +24,10 @@ public class SelectOption {
   	case 0 :
 			quit = true 
 
-		case 1 :
-			task.viewTask()
+  	case 1 :
+  		task.viewTask()
 
-		case 2 :
+  	case 2 :
       var add : Bool = true 
       var confirm : String! = ""
 			while(add) {
@@ -47,7 +51,7 @@ public class SelectOption {
 
 	    case 6 :
 	    	print("Enter day")
-	    	task.taskByDay(readLine())
+	    	task.inputDay(readLine())
 
 	    default :
 	      print("Sorry your request is out of service")
