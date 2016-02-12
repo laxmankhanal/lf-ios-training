@@ -15,6 +15,10 @@
   // var fileHandler = FileHandler()
   // print(fileHandler.readFromFile("/home/leapfrog/Desktop/ch"))
 
+  var taskDAO = TaskDAO()
+  taskDAO.createDatabase("lf-check")
+  taskDAO.createTable(withDatabase: "check", withTable: "table_checkit")
+
   while(isValid == false) {
     if(i > 0){
       print("Enter the information correctly \n")
