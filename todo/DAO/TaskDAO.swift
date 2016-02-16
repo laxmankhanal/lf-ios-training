@@ -3,7 +3,8 @@ import sqlite3
 public class TaskDAO {
 
   var db: COpaquePointer = nil
-  var success :Bool = false
+  var successMessage :Bool = false
+  
   func createDatabase(dbName: String) -> Bool {
   	if sqlite3_open(dbName, &db) == SQLITE_OK{
   		return true
@@ -14,39 +15,38 @@ public class TaskDAO {
 
   func createTable(withDatabase dbName: String, withTable tableName: String) -> Bool {
     if sqlite3_open(dbName, &db) == SQLITE_OK{
-      var createQuery: String = "create table if not exists \(tableName) (id integer primary key autoincrement, name text, password text)";
-
+      var createQuery: String = "create table if not exists \(tableName) (id integer primary key autoincrement, taskTitle text, taskDescription)"
+      
       if sqlite3_exec(db, createQuery, nil, nil, nil) != SQLITE_OK {
         let errmsg = String.fromCString(sqlite3_errmsg(db))
         print("error creating table: \(errmsg)")
       }
-      success = true
+      successMessage = true
     }else{
       print("Database donot Exists")
     }
     print("check")
-    return success
+    return successMessage
   }
 
-  func createTask(withDatabase dbName: String, task: Task) -> Bool {
+  func createTask(withDatabase dbName: String, withTask task: TaskAttribute, withTable tableName: String) -> Bool {
     if sqlite3_open(dbName, &db) == SQLITE_OK{
-      var insertQuery = "insert into test (name) values ()"
+      var insertQuery = "insert into \(tableName) (id, taskTitle, taskDescription) values ('', task.taskTitle, task.taskDescription)"
 
       if sqlite3_exec(db, insertQuery, nil, nil, nil) != SQLITE_OK {
         let errmsg = String.fromCString(sqlite3_errmsg(db))
         print("error inserting message: \(errmsg)")
       }
-      success = true
+      successMessage = true
     }else{
       print("Database donot Exists")
     }
-    print(check)
-    return success
+    return successMessage
   }
-  /* 
-  func getTask(arguments) -> ReturnType {
+  
+  func getTask(withDatabase dbName: String, withTask task: TaskAttribute, withTable tableName: String) -> ReturnType {
     if sqlite3_open(dbName, &db) == SQLITE_OK{
-      var getUserQuery = "select * from test where name = 'laxman' "
+      var getUserQuery = "select * from \(tableName) where name = 'laxman' "
 
       if sqlite3_exec(db, getUserQuery, nil, nil, nil) != SQLITE_OK {
         let errmsg = String.fromCString(sqlite3_errmsg(db))
@@ -55,6 +55,6 @@ public class TaskDAO {
     }else{
       print("Database donot Exists")
     }
-  } */
+  } 
   
 }

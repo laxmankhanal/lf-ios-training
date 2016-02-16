@@ -1,4 +1,4 @@
-public class SelectOption {
+/* public class SelectOption {
 
 	var choice: String? = ""
 	var select: Int!
@@ -61,3 +61,4 @@ public class SelectOption {
 		}
 		
 }
+ */

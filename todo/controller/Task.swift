@@ -1,4 +1,4 @@
-public class Task {
+ public class Task {
 
 	var task = [TaskAttributes]()
 	var i : Int
@@ -26,13 +26,13 @@ public class Task {
 		print("\n Enter Description of task")
 		let description: String? = readLine()
 
-		/*print("\n Enter Total Hours")
+		print("\n Enter Total Hours")
     var totalHour = readLine()
 		var totalHours = Int(totalHour!)!
 
 		print("\n Enter Working Hours A Day")
 		var workingHour = readLine()
-    var workingHours = Int(workingHour!)!*/
+    var workingHours = Int(workingHour!)!
 
     taskAttributes.taskTitle = title!
     taskAttributes.taskDescription = description!
@@ -95,3 +95,4 @@ public class Task {
   }
 
 }
+ 

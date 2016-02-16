@@ -1,4 +1,4 @@
-  import Foundation
+/*   import Foundation
   import Glibc
 
   var i : Int? = 0
@@ -13,11 +13,7 @@
   var task = Task()
 
   var fileHandler = FileHandler()
-  // print(fileHandler.readFromFile("/home/leapfrog/Desktop/ch"))
-
-  var taskDAO = TaskDAO()
-  taskDAO.createDatabase("lf-check")
-  taskDAO.createTable(withDatabase: "check", withTable: "table_checkit")
+  print(fileHandler.readFromFile("/home/leapfrog/Desktop/ch"))
 
   while(isValid == false) {
     if(i > 0){
@@ -38,4 +34,7 @@
     quit = selectOption.getOptions()
 
   }  
-  
+   */
+
+
+
