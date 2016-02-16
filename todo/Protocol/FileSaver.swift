@@ -1,0 +1,3 @@
+protocol FileSaver {
+	func saved()
+}
